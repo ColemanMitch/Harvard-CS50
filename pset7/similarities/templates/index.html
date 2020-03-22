@@ -1,0 +1,23 @@
+
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="col">
+        <form action="/compare"
+              enctype="multipart/form-data"
+              method="post">
+              <h6>Upload two files for comparison: </h6>
+              <input name="file1" type="file"></input><br><br>
+              <input name="file2" type="file"></input><br><br>
+              <h6>Choose an algorithm: </h6>
+              <input class name="algorithm" value ="lines" type="radio"> Compare lines </input><br>
+              <input name="algorithm" value ="sentences" type="radio"> Compare sentences </input><br>
+              <input name="algorithm" value = "substrings" type="radio"> Compare substrings </input><br>
+             <input name="length" type="number" min=1 placeholder="of length n"></input><br><br>
+            <!-- TODO -->
+        <button type="submit">Compare</button>
+        </form>
+    </div>
+
+{% endblock %}

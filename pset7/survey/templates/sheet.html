@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.cs" rel="stylesheet">
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+
+    <h3>Lifts</h3>
+    <table id="dtable" class="table dataTable table-hover table-bordered" style="width:100%" cellspacing="0">
+        <thead class="thead-light">
+            <tr>
+                <th class = "th-sm">Name</th>
+                <th>Lift</th>
+                <th>Weight</th>
+                <th>Units</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for lift in lifts %}
+            <tr>
+                <td>{{ lift[0] }}</td>
+                <td>{{ lift[1] }}</td>
+                <td>{{ lift[2] }}</td>
+                <td>{{ lift[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+           $(document).ready(function() {
+           $('#dtable').DataTable();
+           });
+    </script>
+
+
+{% endblock %}
