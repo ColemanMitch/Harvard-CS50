@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+   <main class="container p-5">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="3"></td>
+                    <td colspan="1">TOTAL</td>
+                    <td colspan="1">{{total_value}}</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                {% for stonk in stonks %}
+                <tr>
+                    <td>{{stonk.stock}}</td>
+                    <td>{{stonk.name}}</td>
+                    <td>{{stonk.num_shares}}</td>
+                    <td>{{stonk.current_price}}</td>
+                    <td>{{stonk.value}}</td>
+                {% endfor %}
+                <tr>
+                    <td colspan="1">CASH</td>
+                    <td colspan="3"></td>
+                    <td colspan="1">{{user_cash}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+{% endblock %}

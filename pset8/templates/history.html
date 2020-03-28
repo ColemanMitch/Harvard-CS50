@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+
+<main class="container p-5">
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th colspan="1">Symbol</th>
+                <th colspan="1">Shares</th>
+                <th colspan="1">Price</th>
+                <th colspan="2">Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stonk in stonks %}
+            <tr>
+                <td>{{stonk.stock}}</td>
+                <td>{{stonk.num_shares}}</td>
+                <td>{{stonk.price}}</td>
+                <td>{{stonk.timestamp}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+{% endblock %}
